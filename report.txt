@@ -1,0 +1,16 @@
+Our filesystem is very simplistic in style and implementation. The main
+advantage to this is how quick and easy it was to implement all of the required
+features. Another advantage is that the filesystem is highly optimized for
+small files. Both read and write calls have a very early cutoff in the storage
+code if the size of a file is less than 1 block. There are certainly drawbacks,
+as there are in any filesystem. One major drawback is that having only a single
+indirect block means that only files up to 4MB are supported. This is obviously
+sufficient for the purpose of this assignment, but clearly not sufficient for
+practical use. Time being the limiting factor, we would not improve anything. 
+We were able complete all of the features in a very reasonable timeframe. If 
+writing filesystems was the sort of thing we enjoyed, we would consider
+implementing more than 1 direct block for faster retrieval of non trivial 
+small files as well as extents to improve retrieval of larger files. We might
+also implement some sort of garbage collection process to coalesce data blocks
+for fragmented files. However, we were happy with our basic implementation and
+we did not implement anything more than was required. 
